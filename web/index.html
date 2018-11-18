@@ -71,7 +71,7 @@
 						<input type="text" class="form-control" aria-label="Buscar">
 					</div>
 				</div>
-				
+
 			</div>
 			<div class="row">
 				<div class="col-1"></div>
@@ -81,33 +81,33 @@
 							<tbody>
 								<tr>
 									<td>mv1</td>
-									<td>circulo</td>
-									<td>apagado</td>
-								</tr>
-								<tr>
-									<td>mv3</td>
-									<td>circulo</td>
+									<td><span class="badge-pill badge-success"></span></td>
 									<td>encendido</td>
 								</tr>
 								<tr>
+									<td>mv3</td>
+									<td><span class="badge-pill badge-danger"></span></td>
+									<td>apagado</td>
+								</tr>
+								<tr>
 									<td>mv2</td>
-									<td>circulo</td>
+									<td><span class="badge-pill badge-warning"></span></td>
 									<td>suspendido</td>
 								</tr>
 								<tr>
 									<td>mv5</td>
-									<td>circulo</td>
+									<td><span class="badge-pill badge-warning"></span></td>
 									<td>suspendido</td>
 								</tr>
 								<tr>
 									<td>mv6</td>
-									<td>circulo</td>
+									<td><span class="badge-pill badge-danger"></span></td>
 									<td>apagado</td>
 								</tr>
 								<tr>
 									<td>mv9</td>
-									<td>circulo</td>
-									<td>encendido</td>
+									<td><span class="badge-pill badge-danger"></span></td>
+									<td>apagado</td>
 								</tr>
 							</tbody>
 						</table>
@@ -127,12 +127,12 @@
 								</tr>
 								<tr>
 									<td>mv3</td>
-									<td>circulo</td>
-									<td>encendido</td>
+									<td><span class="badge-pill badge-danger"></span></td>
+									<td>apagado</td>
 								</tr>
 								<tr>
 									<td>mv2</td>
-									<td>circulo</td>
+									<td><span class="badge-pill badge-warning"></span></td>
 									<td>suspendido</td>
 								</tr>
 								<tr id="filaNombreGrupo">
@@ -142,20 +142,21 @@
 								</tr>
 								<tr>
 									<td>mv1</td>
-									<td>circulo</td>
-									<td>suspendido</td>
+									<td><span class="badge-pill badge-success"></span></td>
+									<td>encendido</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
 				</div>
 			</div>
-		</div>
-		
-		<div class="container-fluid">
+			
 			<button type="button" class="btn btn-primary">Modificar</button>
+			🔓	
 			<div class="border border-primary">
 				<div  class="row">
+					
+					
 					<div  class="col-sm">
 						<form>
 							<div class="form-group row">
@@ -180,8 +181,17 @@
 							</div>
 							
 							<div class="form-group row">
+								<label for="inputPassword3" class="col-sm-3 col-form-label"></label>
 								<div class="col-sm-5">
-									<button type="submit" class="btn btn-primary">Crear</button>
+									
+								</div>
+							</div>
+							
+							</br>
+							
+							<div class="form-group row">
+								<div class="col-sm-5">
+									<button type="submit" class="btn btn-primary">Guardar</button>
 								</div>
 							</div>
 						</form>
@@ -189,62 +199,64 @@
 					<div class="col-sm">
 						<form>
 							<div class="form-group row">
-								<label for="inputEmail3" class="col-sm-3 col-form-label">Porcentaje CPU:</label>
+							<label for="inputEmail3" class="col-sm-3 col-form-label">Porcentaje CPU:</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" id="inputEmail3" placeholder="30%" readonly>
+							</div>
+							
+							</div>
+							
+							<div class="form-group row">
+								<label for="inputPassword3" class="col-sm-3 col-form-label">Núcleos</label>
 								<div class="col-sm-5">
-									<input type="text" class="form-control" id="inputEmail3" placeholder="30%" readonly>
+									<input type="text" class="form-control" id="inputPassword3" placeholder="2" readonly>
 								</div>
-								<p>
+							</div>
+							
+							<div class="form-group row">
+								<label for="inputPassword3" class="col-sm-3 col-form-label">Fichero ISO</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="inputPassword3" placeholder="fichero.iso" readonly>
 								</div>
-								
-								<div class="form-group row">
-									<label for="inputPassword3" class="col-sm-3 col-form-label">Núcleos</label>
-									<div class="col-sm-5">
-										<input type="text" class="form-control" id="inputPassword3" placeholder="2" readonly>
-									</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="inputPassword3" class="col-sm-3 col-form-label">Dirección IP</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="inputPassword3" placeholder="192.168.1.1" readonly>
 								</div>
-								
-								<div class="form-group row">
-									<label for="inputPassword3" class="col-sm-3 col-form-label">Fichero ISO</label>
-									<div class="col-sm-5">
-										<input type="text" class="form-control" id="inputPassword3" placeholder="fichero.iso" readonly>
-									</div>
+							</div>
+							
+							<div class="form-group row">
+								<div class="col-sm-5">
+									<button type="submit" class="btn btn-primary">Restablecer</button>
 								</div>
-								
-								<div class="form-group row">
-									<label for="inputPassword3" class="col-sm-3 col-form-label">Dirección IP</label>
-									<div class="col-sm-5">
-										<input type="text" class="form-control" id="inputPassword3" placeholder="192.168.1.1" readonly>
-									</div>
-								</div>
-								
-								<div class="form-group row">
-									<div class="col-sm-5">
-										<button type="submit" class="btn btn-primary">Cancelar</button>
-									</div>
-								</div>
-							</form>
-						</div>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			<!-- Optional JavaScript -->
-			<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-			<script src="js/jquery-3.3.1.slim.min.js"></script>
-			<script src="js/popper.min.js"></script>
-			<script src="js/bootstrap.min.js"></script>
-		</body>
-	</html>		
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="js/jquery-3.3.1.slim.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>		
