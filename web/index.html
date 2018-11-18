@@ -1,178 +1,250 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/estilo.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-    <title>Magic Virual Machine</title>
-  </head>
-  <body>
-    <!-- PRACTICA 6: tu contenido aqui -->
-    <div class="header">
-    	<nav class="navbar navbar-expand-sm bg-light">
-		  	<ul class="navbar-nav">
-		    	<li class="nav-item">
-		      		<a class="nav-link btn btn-primary" href="#" id="btn_archivo">Archivo</a>
-		    	</li>
-		    	<li class="nav-item">
-		     		<a class="nav-link btn btn-primary" href="#" id="btn_archivo">Editar</a>
-		    	</li>
-		    	<li class="nav-item">
-		      		<a class="nav-link btn btn-primary" href="#" id="btn_archivo">Ayuda</a>
-		    	</li>
-		  	</ul>
-		</nav>
-    </div>
-    <div class="container-fluid">
-    	<div class="row">
-    		<div class="col-2"><a class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-play"></i></a></div>
-    		<div class="col-2"><a class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-stop"></i></a></div>
-    		<div class="col-2">
-    			<div class="dropdown">
-				    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-				      Opciones
-				    </button>
-				    <div class="dropdown-menu">
-				      <a class="dropdown-item" href="#">Arrancar y pausar</a>
-				    </div>
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/estilo.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		
+		<title>Magic Virual Machine</title>
+	</head>
+	<body>
+		<!-- PRACTICA 6: tu contenido aqui -->
+		<div class="header">
+			<nav class="navbar navbar-expand-sm bg-light">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link btn btn-primary" href="#" id="btn_archivo">Archivo</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link btn btn-primary" href="#" id="btn_archivo">Editar</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link btn btn-primary" href="#" id="btn_archivo">Ayuda</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-2"><a class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-play"></i></a></div>
+				<div class="col-2"><a class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-stop"></i></a></div>
+				<div class="col-2">
+					<div class="dropdown">
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+							Opciones
+						</button>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">Arrancar y pausar</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-6"></div>
+			</div>
+			<div class="row">
+				<div class="col-1"><a class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-plus"></i></a></div>
+				<div class="col-2"><h4>Máquinas Virtuales</h6></div>
+				<div class="col-2">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<i class="fas fa-search"></i>
+							</div>
+						</div>
+						<input type="text" class="form-control" aria-label="Buscar">
+					</div>
+				</div>
+				<div class="col-1"></div>
+				<div class="col-1"><a class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-plus"></i></a></div>
+				<div class="col-2"><h4>Grupos</h6></div>
+				<div class="col-2">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<i class="fas fa-search"></i>
+							</div>
+						</div>
+						<input type="text" class="form-control" aria-label="Buscar">
+					</div>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-4">
+					<div class="table-wrapper-scroll-y">
+						<table class="table table-hover" id="tabla">				
+							<tbody>
+								<tr>
+									<td>mv1</td>
+									<td>circulo</td>
+									<td>apagado</td>
+								</tr>
+								<tr>
+									<td>mv3</td>
+									<td>circulo</td>
+									<td>encendido</td>
+								</tr>
+								<tr>
+									<td>mv2</td>
+									<td>circulo</td>
+									<td>suspendido</td>
+								</tr>
+								<tr>
+									<td>mv5</td>
+									<td>circulo</td>
+									<td>suspendido</td>
+								</tr>
+								<tr>
+									<td>mv6</td>
+									<td>circulo</td>
+									<td>apagado</td>
+								</tr>
+								<tr>
+									<td>mv9</td>
+									<td>circulo</td>
+									<td>encendido</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<div class="col-1"></div>
+				<div class="col-1"></div>
+				<div class="col-4">
+					<div class="table-wrapper-scroll-y">
+						<table class="table table-hover" id="tabla">				
+							<tbody>
+								<tr id="filaNombreGrupo">
+									<td>grupo 2</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>mv3</td>
+									<td>circulo</td>
+									<td>encendido</td>
+								</tr>
+								<tr>
+									<td>mv2</td>
+									<td>circulo</td>
+									<td>suspendido</td>
+								</tr>
+								<tr id="filaNombreGrupo">
+									<td>grupo 4</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>mv1</td>
+									<td>circulo</td>
+									<td>suspendido</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
-    		 <div class="col-6"></div>
-    	</div>
-    	<div class="row">
-    		<div class="col-1"><a class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-plus"></i></a></div>
-			<div class="col-2"><h6>Máquinas Virtuales</h6></div>
-			<div class="col-2">
-				<div class="input-group">
-				  <div class="input-group-prepend">
-				    <div class="input-group-text">
-				   	<i class="fas fa-search"></i>
-				    </div>
-				  </div>
-				  <input type="text" class="form-control" aria-label="Buscar">
+		</div>
+		
+		<div class="container-fluid">
+			<button type="button" class="btn btn-primary">Modificar</button>
+			<div class="border border-primary">
+				<div  class="row">
+					<div  class="col-sm">
+						<form>
+							<div class="form-group row">
+								<label for="inputEmail3" class="col-sm-3 col-form-label">Nombre:</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="inputEmail3" placeholder="VM1" readonly>
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="inputPassword3" class="col-sm-3 col-form-label">Memoria RAM:</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="inputPassword3" placeholder="8 GB" readonly>
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="inputPassword3" class="col-sm-3 col-form-label">Tamaño disco virtual</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="inputPassword3" placeholder="1 TB" readonly>
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<div class="col-sm-5">
+									<button type="submit" class="btn btn-primary">Crear</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="col-sm">
+						<form>
+							<div class="form-group row">
+								<label for="inputEmail3" class="col-sm-3 col-form-label">Porcentaje CPU:</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="inputEmail3" placeholder="30%" readonly>
+								</div>
+								<p>
+								</div>
+								
+								<div class="form-group row">
+									<label for="inputPassword3" class="col-sm-3 col-form-label">Núcleos</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="inputPassword3" placeholder="2" readonly>
+									</div>
+								</div>
+								
+								<div class="form-group row">
+									<label for="inputPassword3" class="col-sm-3 col-form-label">Fichero ISO</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="inputPassword3" placeholder="fichero.iso" readonly>
+									</div>
+								</div>
+								
+								<div class="form-group row">
+									<label for="inputPassword3" class="col-sm-3 col-form-label">Dirección IP</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="inputPassword3" placeholder="192.168.1.1" readonly>
+									</div>
+								</div>
+								
+								<div class="form-group row">
+									<div class="col-sm-5">
+										<button type="submit" class="btn btn-primary">Cancelar</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="col-1"></div>
-			<div class="col-1"><a class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-plus"></i></a></div>
-			<div class="col-2"><h6>Máquinas Virtuales</h6></div>
-			<div class="col-2">
-				<div class="input-group">
-				  <div class="input-group-prepend">
-				    <div class="input-group-text">
-				   	<i class="fas fa-search"></i>
-				    </div>
-				  </div>
-				  <input type="text" class="form-control" aria-label="Buscar">
-				</div>
-			</div>
-    		
-    	</div>
-    	<div class="row">
-    		<div class="col-1"></div>
-    		<div class="col-4">
-    			<div class="table-wrapper-scroll-y">
-	    			<table class="table table-hover" id="tabla">				
-					    <tbody>
-					      <tr>
-					        <td>mv1</td>
-					        <td>circulo</td>
-					        <td>apagado</td>
-					      </tr>
-					      <tr>
-					        <td>mv3</td>
-					        <td>circulo</td>
-					        <td>encendido</td>
-					      </tr>
-					      <tr>
-					        <td>mv2</td>
-					        <td>circulo</td>
-					        <td>suspendido</td>
-					      </tr>
-					      <tr>
-					        <td>mv5</td>
-					        <td>circulo</td>
-					        <td>suspendido</td>
-					      </tr>
-					      <tr>
-					        <td>mv6</td>
-					        <td>circulo</td>
-					        <td>apagado</td>
-					      </tr>
-					      <tr>
-					        <td>mv9</td>
-					        <td>circulo</td>
-					        <td>encendido</td>
-					      </tr>
-					    </tbody>
-				  	</table>
-			  	</div>
-    		</div>
-    	
-	    	<div class="col-1"></div>
-			<div class="col-1"></div>
-			<div class="col-4">
-				<div class="table-wrapper-scroll-y">
-					<table class="table table-hover" id="tabla">				
-					    <tbody>
-					      <tr id="filaNombreGrupo">
-					        <td>grupo 2</td>
-					        <td></td>
-					        <td></td>
-					      </tr>
-					      <tr>
-					        <td>mv3</td>
-					        <td>circulo</td>
-					        <td>encendido</td>
-					      </tr>
-					      <tr>
-					        <td>mv2</td>
-					        <td>circulo</td>
-					        <td>suspendido</td>
-					      </tr>
-					      <tr id="filaNombreGrupo">
-					        <td>grupo 4</td>
-					        <td></td>
-					        <td></td>
-					      </tr>
-					       <tr>
-					        <td>mv1</td>
-					        <td>circulo</td>
-					        <td>suspendido</td>
-					      </tr>
-					    </tbody>
-				  	</table>
-			  	</div>
-    		</div>
-    	</div>
-
-
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
-</html>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Optional JavaScript -->
+			<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+			<script src="js/jquery-3.3.1.slim.min.js"></script>
+			<script src="js/popper.min.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+		</body>
+	</html>		
