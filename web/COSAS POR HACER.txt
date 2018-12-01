@@ -1,6 +1,6 @@
 - Importar ,Modificar, Eliminar maquina y grupos (JSON y página)
-- Añadir botón eliminar
+- Añadir botón eliminar (hecho)
 - Conectar con la API (Cargar..)
 - Validación
-- Añadir grupos boton
+- Añadir grupos boton (hecho)
 
