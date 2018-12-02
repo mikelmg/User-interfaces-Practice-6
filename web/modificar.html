@@ -32,283 +32,284 @@
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" data-toggle="modal" data-target="#ImportarModalCenter" href="#">Importar</a>
 								<a class="dropdown-item" href="#">Exportar</a>
-							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle active"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Editar
-								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="#">Action</a>
-									<a class="dropdown-item" href="#">Another action</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Something else here</a>
-								</div>
-							</li>
-							<li>
-								<a class="nav-link active"  href="#">Ayuda</a>
-							</li>
-						</ul>
-					</div>
-				</nav>
-			</div>
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-1"><a id ="b1" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-play"></i></a></div>
-					<div class="col-1"><a id ="b2" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-stop"></i></a></div>
-					<div class="col-1"><a id ="b3" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-pause"></i></a></div>
-					<div class="col-1"><a id ="b4" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-sync-alt"></i></a></div>
-					<div class="col-1"><a id ="b4" class="nav-link btn btn-danger" href="#" id=""><i class="fas fa-trash-alt"></i></a></div>
-
-					
-					<div class="col-6"></div>
-				</div>
-				<div class="row">
-					<div class="col-1"><a class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-plus"></i></a></div>
-					<div class="col-2"><h4>Máquinas Virtuales</h6></div>
-					<div class="col-2">
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<div class="input-group-text">
-									<i class="fas fa-search"></i>
-								</div>
 							</div>
-							<input type="text" class="form-control" aria-label="Buscar">
-						</div>
-					</div>
-					<div class="col-1"></div>
-					<div class="col-1"><a class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-plus"></i></a></div>
-					<div class="col-2"><h4>Grupos</h6></div>
-					<div class="col-2">
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<div class="input-group-text">
-									<i class="fas fa-search"></i>
-								</div>
-							</div>
-							<input type="text" class="form-control" aria-label="Buscar">
-						</div>
-					</div>
-					
-				</div>
-				<div class="row">
-					<div class="col-1"></div>
-					<div class="col-4">
-						<div class="table-wrapper-scroll-y">
-							<table class="table table-hover" id="tabla">				
-								<tbody>
-									<tr>
-										<td>mv1</td>
-									</tr>
-									<tr>
-										<td>mv3</td>
-									</tr>
-									<tr>
-										<td>mv2</td>
-									</tr>
-									<tr>
-										<td>mv5</td>
-									</tr>
-									<tr>
-										<td>mv6</td>
-									</tr>
-									<tr>
-										<td>mv9</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					
-					<div class="col-1"></div>
-					<div class="col-1"></div>
-					<div class="col-4">
-						<div class="table-wrapper-scroll-y">
-							<table class="table table-hover" id="tabla">				
-								<tbody>
-									<tr id="filaNombreGrupo">
-										<td>grupo 2</td>
-										<td></td>
-										<td></td>
-										<td><a id= "plus" class="btn btn-success"><i class="fas fa-plus"></i></a></td>
-									</tr>
-									<tr>
-										<td>mv3</td>
-										<td><span class="badge-pill badge-danger"></span></td>
-										<td>apagado</td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>mv2</td>
-										<td><span class="badge-pill badge-warning"></span></td>
-										<td>suspendido</td>
-										<td></td>
-									</tr>
-									<tr id="filaNombreGrupo">
-										<td>grupo 4</td>
-										<td></td>
-										<td></td>
-										<td><a id= "plus" class="btn btn-success"><i class="fas fa-plus"></i></a></td>
-									</tr>
-									<tr>
-										<td>mv1</td>
-										<td><span class="badge-pill badge-success"></span></td>
-										<td>encendido</td>
-										<td></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-				
-				<button type="button" class="btn btn-primary">Modificar</button>
-				🔓	
-				<div class="border border-primary">
-					<div  class="row">
-						
-						<div  class="col-sm">
-							<form>
-								<div class="form-group row">
-									<label for="inputNombre" class="col-sm-3 col-form-label">Nombre:</label>
-									<div class="col-sm-5">
-										<input type="text" class="form-control" id="inputNombre" placeholder="VM1">
-									</div>
-								</div>
-								
-								<div class="form-group row">
-									<label for="inputRAM" class="col-sm-3 col-form-label">Memoria RAM:</label>
-									<div class="col-sm-5">
-										<input type="text" class="form-control" id="inputRAM" placeholder="8 GB" >
-									</div>
-								</div>
-								
-								<div class="form-group row">
-									<label for="inputHDD" class="col-sm-3 col-form-label">Tamaño disco virtual</label>
-									<div class="col-sm-5">
-										<input type="text" class="form-control" id="inputHDD" placeholder="1 TB" >
-									</div>
-								</div>
-						
-							</form>
-						</div>
-						<div class="col-sm">
-							<form>
-								<div class="form-group row">
-									<label for="inputCPU" class="col-sm-3 col-form-label">Porcentaje CPU:</label>
-									<div class="col-sm-5">
-										<input type="text" class="form-control" id="inputCPU" placeholder="30%">
-									</div>
-									
-								</div>
-								
-								<div class="form-group row">
-									<label for="inputNucleos" class="col-sm-3 col-form-label">Núcleos</label>
-									<div class="col-sm-5">
-										<input type="text" class="form-control" id="inputNucleos" placeholder="2">
-									</div>
-								</div>
-								
-								<div class="form-group row">
-									<label for="inputISO" class="col-sm-3 col-form-label">Fichero ISO</label>
-									
-									<div class="col-sm-5">
-										<div class="custom-file">
-											<input type="file" class="custom-file-input" id="inputISO" aria-describedby="inputGroupFileAddon01">
-											<label class="custom-file-label" for="inputISO">fichero.iso</label>
+							
+							<!-- Modal Importar -->
+							<div class="modal fade" id="ImportarModalCenter" tabindex="-1" role="dialog" aria-labelledby="ImportarModalCenterTitle" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="ImportarModalLongTitle">Importar</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<div>
+												
+												<div class="col-lg">
+													<div class="custom-file">
+														<input type="file" class="custom-file-input" id="inputImportar" aria-describedby="inputGroupFileAddon01">
+														<label class="custom-file-label" for="inputImportar">Añadir fichero</label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+											<button type="button" class="btn btn-primary">Importar</button>
 										</div>
 									</div>
 								</div>
-								
-								<div class="form-group row">
-									<label for="inputIP" class="col-sm-3 col-form-label">Dirección IP</label>
-									<div class="ip">
-										<input type="text" class="form-control" id="inputIP1" placeholder="192">
-									</div>
-									<div class="ip">
-										<input type="text" class="form-control" id="inputIP2" placeholder="168">
-									</div>
-									<div class="ip">
-										<input type="text" class="form-control" id="inputIP3" placeholder="1">
-									</div>
-									<div class="ip">
-										<input type="text" class="form-control" id="inputIP4" placeholder="1">
-									</div>
-								</div>
-								
-							</form>
-						</div>
-					</div>
-					
-					<div  class="row">
-						<div  class="col-sm">
-							<div class="form-group row">
-								<div class="col-sm-5">
-									<button type="submit" class="btn btn-primary">Guardar</button>
-								</div>
+							</div>
+							
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle active"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Editar
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+						<li>
+							<a class="nav-link active"  href="#">Ayuda</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-1"><a id ="b1" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-play"></i></a></div>
+				<div class="col-1"><a id ="b2" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-stop"></i></a></div>
+				<div class="col-1"><a id ="b3" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-pause"></i></a></div>
+				<div class="col-1"><a id ="b4" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-sync-alt"></i></a></div>
+				<div class="col-1"><a id ="b4" class="nav-link btn btn-danger" href="#" id=""><i class="fas fa-trash-alt"></i></a></div>
+				
+				
+				<div class="col-6"></div>
+			</div>
+			<div class="row">
+				<div class="col-1"><a class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-plus"></i></a></div>
+				<div class="col-2"><h4>Máquinas Virtuales</h6></div>
+				<div class="col-2">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<i class="fas fa-search"></i>
 							</div>
 						</div>
-						<div  class="col-sm">
+						<input type="text" class="form-control" aria-label="Buscar">
+					</div>
+				</div>
+				<div class="col-1"></div>
+				<div class="col-1"><a class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-plus"></i></a></div>
+				<div class="col-2"><h4>Grupos</h6></div>
+				<div class="col-2">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<i class="fas fa-search"></i>
+							</div>
+						</div>
+						<input type="text" class="form-control" aria-label="Buscar">
+					</div>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-4">
+					<div class="table-wrapper-scroll-y">
+						<table class="table table-hover" id="tabla">				
+							<tbody>
+								<tr>
+									<td>mv1</td>
+								</tr>
+								<tr>
+									<td>mv3</td>
+								</tr>
+								<tr>
+									<td>mv2</td>
+								</tr>
+								<tr>
+									<td>mv5</td>
+								</tr>
+								<tr>
+									<td>mv6</td>
+								</tr>
+								<tr>
+									<td>mv9</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<div class="col-1"></div>
+				<div class="col-1"></div>
+				<div class="col-4">
+					<div class="table-wrapper-scroll-y">
+						<table class="table table-hover" id="tabla">				
+							<tbody>
+								<tr id="filaNombreGrupo">
+									<td>grupo 2</td>
+									<td></td>
+									<td></td>
+									<td><a id= "plus" class="btn btn-success"><i class="fas fa-plus"></i></a></td>
+								</tr>
+								<tr>
+									<td>mv3</td>
+									<td><span class="badge-pill badge-danger"></span></td>
+									<td>apagado</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>mv2</td>
+									<td><span class="badge-pill badge-warning"></span></td>
+									<td>suspendido</td>
+									<td></td>
+								</tr>
+								<tr id="filaNombreGrupo">
+									<td>grupo 4</td>
+									<td></td>
+									<td></td>
+									<td><a id= "plus" class="btn btn-success"><i class="fas fa-plus"></i></a></td>
+								</tr>
+								<tr>
+									<td>mv1</td>
+									<td><span class="badge-pill badge-success"></span></td>
+									<td>encendido</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			
+			<button type="button" class="btn btn-primary">Modificar</button>
+			🔓	
+			<div class="border border-primary">
+				<div  class="row">
+					
+					<div  class="col-sm">
+						<form>
 							<div class="form-group row">
+								<label for="inputNombre" class="col-sm-3 col-form-label">Nombre:</label>
 								<div class="col-sm-5">
-									<button type="submit" class="btn btn-secondary">Restablecer</button>
+									<input type="text" class="form-control" id="inputNombre" placeholder="VM1">
 								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="inputRAM" class="col-sm-3 col-form-label">Memoria RAM:</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="inputRAM" placeholder="8 GB" >
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="inputHDD" class="col-sm-3 col-form-label">Tamaño disco virtual</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="inputHDD" placeholder="1 TB" >
+								</div>
+							</div>
+							
+						</form>
+					</div>
+					<div class="col-sm">
+						<form>
+							<div class="form-group row">
+								<label for="inputCPU" class="col-sm-3 col-form-label">Porcentaje CPU:</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="inputCPU" placeholder="30%">
+								</div>
+								
+							</div>
+							
+							<div class="form-group row">
+								<label for="inputNucleos" class="col-sm-3 col-form-label">Núcleos</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="inputNucleos" placeholder="2">
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="inputISO" class="col-sm-3 col-form-label">Fichero ISO</label>
+								
+								<div class="col-sm-5">
+									<div class="custom-file">
+										<input type="file" class="custom-file-input" id="inputISO" aria-describedby="inputGroupFileAddon01">
+										<label class="custom-file-label" for="inputISO">fichero.iso</label>
+									</div>
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="inputIP" class="col-sm-3 col-form-label">Dirección IP</label>
+								<div class="ip">
+									<input type="text" class="form-control" id="inputIP1" placeholder="192">
+								</div>
+								<div class="ip">
+									<input type="text" class="form-control" id="inputIP2" placeholder="168">
+								</div>
+								<div class="ip">
+									<input type="text" class="form-control" id="inputIP3" placeholder="1">
+								</div>
+								<div class="ip">
+									<input type="text" class="form-control" id="inputIP4" placeholder="1">
+								</div>
+							</div>
+							
+						</form>
+					</div>
+				</div>
+				
+				<div  class="row">
+					<div  class="col-sm">
+						<div class="form-group row">
+							<div class="col-sm-5">
+								<button type="submit" class="btn btn-primary">Guardar</button>
+							</div>
+						</div>
+					</div>
+					<div  class="col-sm">
+						<div class="form-group row">
+							<div class="col-sm-5">
+								<button type="submit" class="btn btn-secondary">Restablecer</button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		
-		
-		
-		<!-- Modal -->
-		<div class="modal fade" id="ImportarModalCenter" tabindex="-1" role="dialog" aria-labelledby="ImportarModalCenterTitle" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="ImportarModalLongTitle">Importar</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<div>
-							
-							<div class="col-lg">
-							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="inputImportar" aria-describedby="inputGroupFileAddon01">
-								<label class="custom-file-label" for="inputImportar">Añadir fichero</label>
-							</div>
-						</div>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-						<button type="button" class="btn btn-primary">Importar</button>
-					</div>
-				</div>
-			</div>
-			</div>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			<!-- Optional JavaScript -->
-			<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-			<!--<script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.1.3/dist/bootstrap-validate.js" integrity="sha384-Mdg4vWje/mL9Q7zo0ThF20z6u2qkn4F2+2/0hUzYqhV7jAQVyhuerLUbplu63KuK" crossorigin="anonymous"></script>
-				<script src="js/bootstrap-validate.js"></script>
-			<script src="js/validacion.js"></script>-->
-			<script src="js/jquery-3.3.1.slim.min.js"></script>
-			<script src="js/popper.min.js"></script>
-			<script src="js/bootstrap.min.js"></script>
-			<script src="js/estados.js"></script>			
-		</body>
-	</html>							
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<!--<script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.1.3/dist/bootstrap-validate.js" integrity="sha384-Mdg4vWje/mL9Q7zo0ThF20z6u2qkn4F2+2/0hUzYqhV7jAQVyhuerLUbplu63KuK" crossorigin="anonymous"></script>
+		<script src="js/bootstrap-validate.js"></script>
+	<script src="js/validacion.js"></script>-->
+	<script src="js/jquery-3.3.1.slim.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/estados.js"></script>			
+</body>
+</html>							
