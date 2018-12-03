@@ -8,316 +8,335 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilo.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <title>VmToolkit</title>
   </head>
   <body>
-
-  <!-- PRACTICA 6.2: tu contenido aqui -->
-    
+    <p id="pruebas"></p>
+        <!-- PRACTICA 6: tu contenido aqui -->
         <div class="header">
-			
-			<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
-				<a class="navbar-brand" href="#">Magic Virtual Machine</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle active"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Archivo
-							</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" data-toggle="modal" data-target="#ImportarModalCenter" href="#">Importar</a>
-								<a class="dropdown-item" href="#">Exportar</a>
-							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle active"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Editar
-								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="#">Action</a>
-									<a class="dropdown-item" href="#">Another action</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Something else here</a>
-								</div>
-							</li>
-							<li>
-								<a class="nav-link active"  href="#">Ayuda</a>
-							</li>
-						</ul>
-					</div>
-				</nav>
-			</div>
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-2"><a class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-play"></i></a></div>
-					<div class="col-2"><a class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-stop"></i></a></div>
-					<div class="col-2">
-						<div class="dropdown">
-							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-								Opciones
-							</button>
-							<div class="dropdown-menu">
-								<a class="dropdown-item" href="#">Arrancar y pausar</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-6"></div>
-				</div>
-				<div class="row">
-					<form id="addForm">
-		                    <div class="form-group">
-		                    <input type="text" class="form-control" id="addName"
-		                            placeholder="Nombre de nueva VM o grupo" required="" data-parsley-newname="">
-		                    </div>
-							<a class="nav-link btn btn-primary" href="#" id="addvm_button"><i class="fas fa-plus"></i></a>
-					</form>
-					<div class="col-2"><h4>Máquinas Virtuales</h6></div>
-					<div class="col-2">
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<div class="input-group-text">
-									<i class="fas fa-search"></i>
-								</div>
-							</div>
-							<input type="text" class="form-control" aria-label="Buscar">
-						</div>
-					</div>
-					<div class="col-1"></div>
-					<div class="col-1">
-						<form id="addForm">
-		                    <div class="form-group">
-		                    <input type="text" class="form-control" id="addName"
-		                            placeholder="Nombre de nueva VM o grupo" required="" data-parsley-newname="">
-		                    </div>
-							<a class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-plus"></i></a>
-						</form>
-					</div>
-					<div class="col-2"><h4>Grupos</h6></div>
-					<div class="col-2">
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<div class="input-group-text">
-									<i class="fas fa-search"></i>
-								</div>
-							</div>
-							<input type="text" class="form-control" aria-label="Buscar">
-						</div>
-					</div>
-					
-				</div>
-				<div class="row">
-					<div class="col-1"></div>
-					<div class="col-4">
-						<div class="table-wrapper-scroll-y">
-							<table class="table table-hover" id="tabla">				
-								<tbody >
-									<tr class="table-active" id="#maquinas">
-										<td>mv1</td>
-										<td><span class="badge-pill badge-success"></span></td>
-										<td>encendido</td>
-									</tr>
-									<tr>
-										<td>mv3</td>
-										<td><span class="badge-pill badge-danger"></span></td>
-										<td>apagado</td>
-									</tr>
-									<tr>
-										<td>mv2</td>
-										<td><span class="badge-pill badge-warning"></span></td>
-										<td>suspendido</td>
-									</tr>
-									<tr>
-										<td>mv5</td>
-										<td><span class="badge-pill badge-warning"></span></td>
-										<td>suspendido</td>
-									</tr>
-									<tr>
-										<td>mv6</td>
-										<td><span class="badge-pill badge-danger"></span></td>
-										<td>apagado</td>
-									</tr>
-									<tr>
-										<td>mv9</td>
-										<td><span class="badge-pill badge-danger"></span></td>
-										<td>apagado</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					
-					<div class="col-1"></div>
-					<div class="col-1"></div>
-					<div class="col-4">
-						<div class="table-wrapper-scroll-y">
-							<table class="table table-hover" id="tabla">				
-								<tbody>
-									<tr id="filaNombreGrupo">
-										<td>grupo 2</td>
-										<td></td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>mv3</td>
-										<td><span class="badge-pill badge-danger"></span></td>
-										<td>apagado</td>
-									</tr>
-									<tr>
-										<td>mv2</td>
-										<td><span class="badge-pill badge-warning"></span></td>
-										<td>suspendido</td>
-									</tr>
-									<tr id="filaNombreGrupo">
-										<td>grupo 4</td>
-										<td></td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>mv1</td>
-										<td><span class="badge-pill badge-success"></span></td>
-										<td>encendido</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-				
-				<button type="button" class="btn btn-primary">Modificar</button>
-				🔓	
-				<div class="border border-primary">
-					<div  class="row">
-						
-						<div  class="col-sm">
-							<form>
-								<div class="form-group row">
-									<label for="inputNombre" class="col-sm-3 col-form-label">Nombre:</label>
-									<div class="col-sm-5">
-										<input type="text" class="form-control" id="inputNombre" placeholder="VM1">
-									</div>
-								</div>
-								
-								<div class="form-group row">
-									<label for="inputRAM" class="col-sm-3 col-form-label">Memoria RAM:</label>
-									<div class="col-sm-5">
-										<input type="text" class="form-control" id="inputRAM" placeholder="8 GB" >
-									</div>
-								</div>
-								
-								<div class="form-group row">
-									<label for="inputHDD" class="col-sm-3 col-form-label">Tamaño disco virtual</label>
-									<div class="col-sm-5">
-										<input type="text" class="form-control" id="inputHDD" placeholder="1 TB" >
-									</div>
-								</div>
-						
-							</form>
-						</div>
-						<div class="col-sm">
-							<form>
-								<div class="form-group row">
-									<label for="inputCPU" class="col-sm-3 col-form-label">Porcentaje CPU:</label>
-									<div class="col-sm-5">
-										<input type="text" class="form-control" id="inputCPU" placeholder="30%">
-									</div>
-									
-								</div>
-								
-								<div class="form-group row">
-									<label for="inputNucleos" class="col-sm-3 col-form-label">Núcleos</label>
-									<div class="col-sm-5">
-										<input type="text" class="form-control" id="inputNucleos" placeholder="2">
-									</div>
-								</div>
-								
-								<div class="form-group row">
-									<label for="inputISO" class="col-sm-3 col-form-label">Fichero ISO</label>
-									
-									<div class="col-sm-5">
-										<div class="custom-file">
-											<input type="file" class="custom-file-input" id="inputISO" aria-describedby="inputGroupFileAddon01">
-											<label class="custom-file-label" for="inputISO">fichero.iso</label>
-										</div>
-									</div>
-								</div>
-								
-								<div class="form-group row">
-									<label for="inputIP" class="col-sm-3 col-form-label">Dirección IP</label>
-									<div class="ip">
-										<input type="text" class="form-control" id="inputIP1" placeholder="192">
-									</div>
-									<div class="ip">
-										<input type="text" class="form-control" id="inputIP2" placeholder="168">
-									</div>
-									<div class="ip">
-										<input type="text" class="form-control" id="inputIP3" placeholder="1">
-									</div>
-									<div class="ip">
-										<input type="text" class="form-control" id="inputIP4" placeholder="1">
-									</div>
-								</div>
-								
-							</form>
-						</div>
-					</div>
-					
-					<div  class="row">
-						<div  class="col-sm">
-							<div class="form-group row">
-								<div class="col-sm-5">
-									<button type="submit" class="btn btn-primary">Guardar</button>
-								</div>
-							</div>
-						</div>
-						<div  class="col-sm">
-							<div class="form-group row">
-								<div class="col-sm-5">
-									<button type="submit" class="btn btn-secondary">Restablecer</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		
-		
-		<!-- Modal -->
-		<div class="modal fade" id="ImportarModalCenter" tabindex="-1" role="dialog" aria-labelledby="ImportarModalCenterTitle" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="ImportarModalLongTitle">Importar</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<div>
-							
-							<div class="col-lg">
-							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="inputImportar" aria-describedby="inputGroupFileAddon01">
-								<label class="custom-file-label" for="inputImportar">Añadir fichero</label>
-							</div>
-						</div>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-						<button type="button" class="btn btn-primary">Importar</button>
-					</div>
-				</div>
-			</div>
-			</div>@
+            <form class="form-inline my-2 my-lg-0">
+            <input id="apikey_input" class="form-control mr-sm-2" type="number" placeholder="apiKey">
+            <button id="apikey_button"  class="btn btn-outline-success my-2 my-sm-0" type="submit">Change</button>
+            </form>
+            <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+                <a class="navbar-brand" href="#">Magic Virtual Machine</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Archivo
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" id="btn_importar" href="#">Importar</a>
+                                <a class="dropdown-item" href="#">Exportar</a>
+                            </div>
+                            
+                            
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Editar
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav-link active"  href="#">Ayuda</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-1"><a id ="b1" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-play"></i></a></div>
+                <div class="col-1"><a id ="b2" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-stop"></i></a></div>
+                <div class="col-1"><a id ="b3" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-pause"></i></a></div>
+                <div class="col-1"><a id ="b4" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-sync-alt"></i></a></div>
+                <div class="col-1"><a class="nav-link btn btn-danger" href="#" id="button_modal_rm"><i class="fas fa-trash-alt"></i></a></div>
+                
+                
+                <div class="col-6"></div>
+            </div>
+            <div class="row">
+                <div class="col-1"><a class="nav-link btn btn-primary" href="#" id="button_modal_add_vm"><i class="fas fa-plus"></i></a></div>
+                <div class="col-2"><h4>Máquinas Virtuales</h6></div>
+                <div class="col-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Buscar">
+                    </div>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-1"><a class="nav-link btn btn-primary" href="#" id="button_modal_add_group"><i class="fas fa-plus"></i></a></div>
+                <div class="col-2"><h4>Grupos</h6></div>
+                <div class="col-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Buscar">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-4">
+                    <!-- Modal de aniadir vms -->
+                    <div class="modal" id="modal_add_vm">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                          
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">Añadir MV</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                  <!--<form action="#" class="form-container" method="post" id="add_vm_form">
+
+                                    <input type="text" placeholder="Introduzca el nombre de la MV" name="nombre_mv" id="input_nombre_mv">
+                                    <button type="submit" class="btn" id="boton_add_vm" name="boton_add_vm">Añadir</button>
+                                  </form>-->
+                                  
+
+                                   <form id="add_vm_form">
+                                        <div class="form-group">
+                                        <input type="text" class="form-control" id="input_nombre_mv"
+                                                placeholder="Nombre de nueva VM o grupo" required="" data-parsley-newname="">
+                                        </div>                                  
+                                        <button id="boton_add_vm" class="btn btn-primary">Añadir VM</button>
+                                    </form>      
+
+                            </div>
+                            
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                            </div>
+                            
+                          </div>
+                        </div>
+                    </div>
+                    <!-- Modal de aniadir grupos -->
+                    <div class="modal" id="modal_add_grupos">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                          
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">Añadir grupos</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                  <!--<form action="#" class="form-container" method="post" id="add_vm_form">
+
+                                    <input type="text" placeholder="Introduzca el nombre de la MV" name="nombre_mv" id="input_nombre_mv">
+                                    <button type="submit" class="btn" id="boton_add_vm" name="boton_add_vm">Añadir</button>
+                                  </form>-->
+                                  
+
+                                   <form id="add_group_form">
+                                        <div class="form-group">
+                                        <input type="text" class="form-control" id="input_nombre_group"
+                                                placeholder="Nombre de nueva VM o grupo" required="" data-parsley-newname="">
+                                        </div> 
+                                        <button id="addgroup_button" class="btn btn-secondary">Añadir Grupo</button>
+                                    </form>      
+
+                            </div>
+                            
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                            </div>
+                            
+                          </div>
+                        </div>
+                    </div>
+
+                     <!-- Modal de borrar vms y grupos -->
+                    <div class="modal" id="modal_rm">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                          
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">Borrar MV o Grupo</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                  <!--<form action="#" class="form-container" method="post" id="add_vm_form">
+
+                                    <input type="text" placeholder="Introduzca el nombre de la MV" name="nombre_mv" id="input_nombre_mv">
+                                    <button type="submit" class="btn" id="boton_add_vm" name="boton_add_vm">Añadir</button>
+                                  </form>-->
+                                  
+
+                                    <form id="rmForm">
+                                        <div class="form-group">
+                                        <input type="text" class="form-control" id="rmName"
+                                                placeholder="Nombre de VM o grupo existente" required="" data-parsley-oldname="">
+                                        </div>          
+                                        <button id="rm_button" class="btn btn-primary">Eliminar</button>
+                                    </form>       
+
+                            </div>
+                            
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                            </div>
+                            
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="table-wrapper-scroll-y">
+                        <table class="table table-hover" id="tabla">                
+                            <tbody id="tabla_mvs">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-4">
+                    <div class="table-wrapper-scroll-y">
+                        <table class="table table-hover" id="tabla"> 
+                            <tbody id="tabla_grupos">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="button" class="btn btn-primary">Modificar</button>
+            🔓   
+            <div class="border border-primary">
+                <div  class="row">
+                    
+                    <div  class="col-sm">
+                        <form>
+                            <div class="form-group row">
+                                <label for="inputNombre" class="col-sm-3 col-form-label">Nombre:</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="inputNombre" placeholder="VM1">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <label for="inputRAM" class="col-sm-3 col-form-label">Memoria RAM:</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="inputRAM" placeholder="8 GB" >
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <label for="inputHDD" class="col-sm-3 col-form-label">Tamaño disco virtual</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="inputHDD" placeholder="1 TB" >
+                                </div>
+                            </div>
+                            
+                        </form>
+                    </div>
+                    <div class="col-sm">
+                        <form>
+                            <div class="form-group row">
+                                <label for="inputCPU" class="col-sm-3 col-form-label">Porcentaje CPU:</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="inputCPU" placeholder="30%">
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="form-group row">
+                                <label for="inputNucleos" class="col-sm-3 col-form-label">Núcleos</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="inputNucleos" placeholder="2">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <label for="inputISO" class="col-sm-3 col-form-label">Fichero ISO</label>
+                                
+                                <div class="col-sm-5">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="inputISO" aria-describedby="inputGroupFileAddon01">
+                                        <label class="custom-file-label" for="inputISO">fichero.iso</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <label for="inputIP" class="col-sm-3 col-form-label">Dirección IP</label>
+                                <div class="ip">
+                                    <input type="text" class="form-control" id="inputIP1" placeholder="192">
+                                </div>
+                                <div class="ip">
+                                    <input type="text" class="form-control" id="inputIP2" placeholder="168">
+                                </div>
+                                <div class="ip">
+                                    <input type="text" class="form-control" id="inputIP3" placeholder="1">
+                                </div>
+                                <div class="ip">
+                                    <input type="text" class="form-control" id="inputIP4" placeholder="1">
+                                </div>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+                
+                <div  class="row">
+                    <div  class="col-sm">
+                        <div class="form-group row">
+                            <div class="col-sm-5">
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="col-sm">
+                        <div class="form-group row">
+                            <div class="col-sm-5">
+                                <button type="submit" class="btn btn-secondary">Restablecer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+  
+ 
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -332,5 +351,12 @@
     
     <!-- Behaviors & bindings between UI and server API -->
     <script type="module" src="js/vt.js"></script>
+
+    <!-- our javascrip -->
+    <script src="js/estados.js"></script>
+    <script type="text/javascript" src="js/importar.js"></script>
+    <script src="js/modales.js"></script>
+    <script src="js/mostrarInfo.js"></script>
+
   </body>
 </html>

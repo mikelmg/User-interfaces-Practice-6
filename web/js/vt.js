@@ -49,7 +49,10 @@ function sendJson(state, url) {
 }
 
 function createGroupItem(group) {
-  const html = [
+   console.log(group);
+   const html= "<tr class='grupo'><td id="+group.name+" >"+group.name+"</td></tr>"
+   return html;
+  /*const html = [
     '<li id="grp_',
     group.name,
     '" ',
@@ -62,7 +65,10 @@ function createGroupItem(group) {
     '</span>',
     '</li>'
   ];
-  return $(html.join(''));
+  return $(html.join(''));*/
+
+  /*const html = "<tr><td id="+params.name+" name="+params.name+" ram="+params.ram+" hdd="+params.hdd+" cpu="+params.cpu+" cores="+params.cores+">"+params.name+"</td></tr>";
+  return html;*/
 }
 
 function createVmItem(params) {
@@ -72,7 +78,8 @@ function createVmItem(params) {
     suspend: 'secondary',
     reset: 'warning'
   }
-  const html = [
+  console.log(params);
+  /*const html = [
     '<li id="vm_',
     params.name,
     '" ',
@@ -83,7 +90,10 @@ function createVmItem(params) {
     ' badge-pill estado">&nbsp;</span>',
     '</li>'
   ];
-  return $(html.join(''));
+  return $(html.join(''));*/
+
+  const html = "<tr><td id="+params.name+" name="+params.name+" ram="+params.ram+" hdd="+params.hdd+" cpu="+params.cpu+" cores="+params.cores+">"+params.name+"</td></tr>";
+  return html;
 }
 
 //
@@ -128,10 +138,10 @@ $(function() {
         state = r; 
         console.log("New state: ", state); 
         try {
-          $("#grupos").empty();
-          state.groups.forEach(group =>  $("#grupos").append(createGroupItem(group)));
-          $("#maquinas").empty();
-          state.vms.forEach(vm =>  $("#maquinas").append(createVmItem(vm)));
+          $("#tabla_grupos").empty();
+          state.groups.forEach(group =>  $("#tabla_grupos").append(createGroupItem(group)));
+          $("#tabla_mvs").empty();
+          state.vms.forEach(vm =>  $("#tabla_mvs").append(createVmItem(vm)));
         } catch (e) {
           console.log(e);
         }
@@ -140,29 +150,32 @@ $(function() {
   }
 
   // añade una VM al sistema
-  $("#addvm_button").click(e => {     
-    if ( ! $("#addForm").parsley().isValid()) {
+  $("#boton_add_vm").click(e => {
+    console.log($("#input_nombre_mv").val());     
+    if ( ! $("#add_vm_form").parsley().isValid()) {
+      console.log("entra primer");
       return;
     }
-	  const name = $("#addName").val();
+	  const name = $("#input_nombre_mv").val();
     const sampleParams = new Vt.Params(
       name,
       1024*16, 1024*1024*16, 100, 2,
       '172.26.0.1'
     );
+    console.log(sampleParams);
     Vt.add(url, sampleParams).then(r => update(r))
-    $("#addForm").parsley().reset();
+    $("#add_vm_form").parsley().reset();
     return false; // <-- evita que se envie el formulario y recargue la pagina
   });
 
   // añade un grupo al sistema
   $("#addgroup_button").click(e => {     
-    if ( ! $("#addForm").parsley().isValid()) {
+    if ( ! $("#add_group_form").parsley().isValid()) {
       return;
     }
-	  const name = $("#addName").val();
+	  const name = $("#input_nombre_group").val();
     Vt.link(url, [], name).then(r => update(r))
-    $("#addForm").parsley().reset();
+    $("#add_group_form").parsley().reset();
     return false; // <-- evita que se envie el formulario y recargue la pagina
   });
   
@@ -192,6 +205,9 @@ $(function() {
       }
     }
   }).disableSelection();
+
+
+
 
   //
   // --- Validación de formularios ---
