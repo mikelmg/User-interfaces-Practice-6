@@ -5,6 +5,7 @@ $(document).ready(function(){
       $("#inputHDD" ).attr("placeholder", $(this).attr("hdd"));
       $("#inputCPU" ).attr("placeholder", $(this).attr("cpu"));
       $("#inputNucleos" ).attr("placeholder", $(this).attr("cores"));
+      $("#input_ip" ).attr("placeholder", $(this).attr("ip"));
   });
 
   $( document ).on( "click", "#tabla_grupos td", function() {
@@ -19,6 +20,7 @@ $(document).ready(function(){
         $("#inputHDD" ).attr("placeholder", $(idDePregunta).attr("hdd"));
         $("#inputCPU" ).attr("placeholder", $(idDePregunta).attr("cpu"));
         $("#inputNucleos" ).attr("placeholder", $(idDePregunta).attr("cores"));
+        $("#input_ip" ).attr("placeholder", $(idDePregunta).attr("ip"));
       }
       else{
         //mostrar algo del grupo

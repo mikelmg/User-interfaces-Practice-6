@@ -13,7 +13,7 @@ import * as Vt from './vtapi.js'
  * @param {Function} errorFn a llamar si el resultado describe un error
  */
 function handleResult(result, successFn, errorFn) {
-	console.log("result: ", result)
+	//console.log("result: ", result)
 	if (result.error) {
 		// error, .message nos indicará el problema
 		errorFn(result.message);
@@ -49,9 +49,15 @@ function sendJson(state, url) {
 }
 
 function createGroupItem(group) {
-   console.log(group);
-   const html= "<tr class='grupo'><td id="+group.name+" >"+group.name+"</td></tr>"
+   //console.log(group);
+   //console.log();
+   let html= "<tr class='grupo'><td id="+group.name+" >"+group.name+"</td></tr>";
+   let i = 0;
+   for (i = 0; i < group.elements.length; i++) { 
+      html+="<tr><td miid="+group.elements[i]+" >"+group.elements[i]+"</td></tr>";
+   }
    return html;
+
   /*const html = [
     '<li id="grp_',
     group.name,
@@ -78,7 +84,7 @@ function createVmItem(params) {
     suspend: 'secondary',
     reset: 'warning'
   }
-  console.log(params);
+  //console.log(params);
   /*const html = [
     '<li id="vm_',
     params.name,
@@ -92,7 +98,7 @@ function createVmItem(params) {
   ];
   return $(html.join(''));*/
 
-  const html = "<tr><td id="+params.name+" name="+params.name+" ram="+params.ram+" hdd="+params.hdd+" cpu="+params.cpu+" cores="+params.cores+">"+params.name+"</td></tr>";
+  const html = "<tr><td id="+params.name+" name="+params.name+" ram="+params.ram+" hdd="+params.hdd+" cpu="+params.cpu+" cores="+params.cores+" ip="+params.ip+">"+params.name+"</td></tr>";
   return html;
 }
 
@@ -150,12 +156,34 @@ $(function() {
       m => console.log("BUAAAAA - ", m))
   }
 
+//añade una maquina virtual a un grupo
+  $("#boton_add_vm_to_group").click(e => {
+    $('#modal_add_vm_to_group').modal('hide');
+    const nameVM = $("#input_vm_togroup" ).val();
+    const nameGroup = $("#input_grupo" ).val();
+    
+
+
+    Vt.rm(url, [nameGroup]).then(r => update(r));
+
+
+    if ($("#add_vm_togroup_form").parsley().isValid()) {
+      return;
+    }
+    const name = $("#input_nombre_group").val();
+    Vt.link(url, [nameVM], nameGroup).then(r => update(r))
+    $("#add_vm_togroup_form").parsley().reset();
+    return false; // <-- evita que se envie el formulari
+
+
+  });
+
   // añade una VM al sistema
   $("#boton_add_vm").click(e => {
     $('#modal_add_vm').modal('hide');
-    console.log($("#input_nombre_mv").val());     
+    //console.log($("#input_nombre_mv").val());     
     if ( ! $("#add_vm_form").parsley().isValid()) {
-      console.log("entra primer");
+      //console.log("entra primer");
       return;
     }
 	  const name = $("#input_nombre_mv").val();
@@ -172,7 +200,9 @@ $(function() {
 
   $("#boton_guardar").click(e => {
     const value = $("#inputNombre" ).attr("placeholder");
-    Vt.rm(url, [value]).then(r => update(r));
+    const returnRm = Vt.rm(url, [value]).then(r => update(r));
+
+   
     let name = (($( "#inputNombre" ).val()) == "")?$("#inputNombre" ).attr("placeholder"): $( "#inputNombre" ).val();
     let ram = (($( "#inputRAM" ).val()) == "")?$("#inputRAM" ).attr("placeholder"): $( "#inputRAM" ).val();
     ram=parseInt(ram, 10);
@@ -188,9 +218,11 @@ $(function() {
     name,ram, hdd, cpu, nucleos,ip
     );
 
-    console.log(sampleParams);
+    //console.log(sampleParams);
     Vt.add(url, sampleParams).then(r => update(r))
     $("#add_vm_form").parsley().reset();
+    i++;
+    
 
     return false; // <-- evita que se envie el formulario y recargue la pagina
   });
@@ -223,7 +255,7 @@ $(function() {
       let parent = $(ui.item).parent();
       let pos = $(parent).children().map(x => x.attr("id")).find(src);
       let tgt = $(parent).children().pos();
-      console.log(ui, src, tgt);
+      //console.log(ui, src, tgt);
 
       if (src.indexOf("vm_") == 0 &&
           tgt.indexOf("grp_") == 0) {

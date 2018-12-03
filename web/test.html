@@ -64,10 +64,11 @@
                 <div class="col-1"><a id ="b2" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-stop"></i></a></div>
                 <div class="col-1"><a id ="b3" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-pause"></i></a></div>
                 <div class="col-1"><a id ="b4" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-sync-alt"></i></a></div>
+                <div class="col-4"><a class="nav-link btn btn-primary" href="#" id="button_modal_add_vm_to_group">Añadir MV a grupo</a></div>
                 <div class="col-1"><a class="nav-link btn btn-danger" href="#" id="button_modal_rm"><i class="fas fa-trash-alt"></i></a></div>
                 
                 
-                <div class="col-6"></div>
+                <div class="col-2"></div>
             </div>
             <div class="row">
                 <div class="col-1"><a class="nav-link btn btn-primary" href="#" id="button_modal_add_vm"><i class="fas fa-plus"></i></a></div>
@@ -216,6 +217,40 @@
                         </div>
                     </div>
 
+                    <!-- Modal de añadir vms a un grupo -->
+                    <div class="modal" id="modal_add_vm_to_group">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                          
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">Añadir MV a un grupo</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            
+                            <!-- Modal body -->
+                            <div class="modal-body">
+
+                                   <form id="add_vm_togroup_form">
+                                        <div class="form-group">
+                                        <input type="text" class="form-control" id="input_vm_togroup"
+                                                placeholder="Nombre de VM" required="" data-parsley-newname="">
+                                         <input type="text" class="form-control" id="input_grupo"                                placeholder="Nombre de grupo" required="" data-parsley-newname="">
+                                        </div>                                  
+                                        <button id="boton_add_vm_to_group" class="btn btn-primary">Añadir VM al grupo</button>
+                                    </form>      
+
+                            </div>
+                            
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                            </div>
+                            
+                          </div>
+                        </div>
+                    </div>
+
                     <div class="table-wrapper-scroll-y">
                         <table class="table table-hover" id="tabla">                
                             <tbody id="tabla_mvs">
@@ -246,21 +281,21 @@
                             <div class="form-group row">
                                 <label for="inputNombre" class="col-sm-3 col-form-label">Nombre:</label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="inputNombre" placeholder="VM1" disabled>
+                                    <input type="text" class="form-control" id="inputNombre" placeholder="-" disabled>
                                 </div>
                             </div>
                             
                             <div class="form-group row">
                                 <label for="inputRAM" class="col-sm-3 col-form-label">Memoria RAM(MB):</label>
                                 <div class="col-sm-5">
-                                    <input type="number" class="form-control" id="inputRAM" placeholder="2000" disabled>
+                                    <input type="number" class="form-control" id="inputRAM" placeholder="-" disabled>
                                 </div>
                             </div>
                             
                             <div class="form-group row">
                                 <label for="inputHDD" class="col-sm-3 col-form-label">Tamaño disco virtual(MB):</label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="inputHDD" placeholder="10000" disabled>
+                                    <input type="text" class="form-control" id="inputHDD" placeholder="-" disabled>
                                 </div>
                             </div>
                             
@@ -271,7 +306,7 @@
                             <div class="form-group row">
                                 <label for="inputCPU" class="col-sm-3 col-form-label">Porcentaje CPU(%):</label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="inputCPU" placeholder="30" disabled>
+                                    <input type="text" class="form-control" id="inputCPU" placeholder="-" disabled>
                                 </div>
                                 
                             </div>
@@ -279,7 +314,7 @@
                             <div class="form-group row">
                                 <label for="inputNucleos" class="col-sm-3 col-form-label">Núcleos</label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="inputNucleos" placeholder="2" disabled>
+                                    <input type="text" class="form-control" id="inputNucleos" placeholder="-" disabled>
                                 </div>
                             </div>
                             
@@ -288,8 +323,7 @@
                                 
                                 <div class="col-sm-5">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="inputISO" aria-describedby="inputGroupFileAddon01" disabled>
-                                        <label class="custom-file-label" for="inputISO">fichero.iso</label>
+                                        <label class="custom-file-label" for="inputISO"></label>
                                     </div>
                                 </div>
                             </div>
@@ -297,7 +331,7 @@
                             <div class="form-group row">
                                 <label for="inputIP" class="col-sm-3 col-form-label">Dirección IP</label>
                                 <div class="ip col-sm-5">
-                                    <input type="text" class="form-control" id="input_ip" placeholder="192.168.1.1" disabled>
+                                    <input type="text" class="form-control" id="input_ip" placeholder="-" disabled>
                                 </div>
                             </div>
                             

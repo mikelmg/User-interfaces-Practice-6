@@ -29,6 +29,12 @@ $(document).ready(function(){
 
 
   });
+
+   $( "#button_modal_add_vm_to_group" ).click(function() {
+     $('#modal_add_vm_to_group').modal('show');
+
+
+  });
 /*
   $( "#tabla_grupos td" ).click(function() {
     console.log(this);
