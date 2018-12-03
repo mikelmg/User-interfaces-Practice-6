@@ -133,6 +133,7 @@ $(function() {
    * @param {Object} result 
    */
   function update(result) {
+    console.log(result);
     handleResult(result, 
       r => {
         state = r; 
@@ -151,6 +152,7 @@ $(function() {
 
   // añade una VM al sistema
   $("#boton_add_vm").click(e => {
+    $('#modal_add_vm').modal('hide');
     console.log($("#input_nombre_mv").val());     
     if ( ! $("#add_vm_form").parsley().isValid()) {
       console.log("entra primer");
@@ -168,8 +170,34 @@ $(function() {
     return false; // <-- evita que se envie el formulario y recargue la pagina
   });
 
+  $("#boton_guardar").click(e => {
+    const value = $("#inputNombre" ).attr("placeholder");
+    Vt.rm(url, [value]).then(r => update(r));
+    let name = (($( "#inputNombre" ).val()) == "")?$("#inputNombre" ).attr("placeholder"): $( "#inputNombre" ).val();
+    let ram = (($( "#inputRAM" ).val()) == "")?$("#inputRAM" ).attr("placeholder"): $( "#inputRAM" ).val();
+    ram=parseInt(ram, 10);
+    let hdd = (($( "#inputHDD" ).val()) == "")?$("#inputHDD" ).attr("placeholder"): $( "#inputHDD" ).val();
+    hdd=parseInt(hdd, 10);
+    let cpu = (($( "#inputCPU" ).val()) == "")?$("#inputCPU" ).attr("placeholder"): $( "#inputCPU" ).val();
+    cpu=parseInt(cpu, 10);
+    let nucleos = (($( "#inputNucleos" ).val()) == "")?$("#inputNucleos" ).attr("placeholder"): $( "#inputNucleos" ).val();
+    nucleos=parseInt(nucleos, 10);
+    let ip = (($( "#input_ip" ).val()) == "")?$("#input_ip" ).attr("placeholder"): $( "#input_ip" ).val();
+    
+    const sampleParams = new Vt.Params(
+    name,ram, hdd, cpu, nucleos,ip
+    );
+
+    console.log(sampleParams);
+    Vt.add(url, sampleParams).then(r => update(r))
+    $("#add_vm_form").parsley().reset();
+
+    return false; // <-- evita que se envie el formulario y recargue la pagina
+  });
+
   // añade un grupo al sistema
-  $("#addgroup_button").click(e => {     
+  $("#addgroup_button").click(e => {  
+    $('#modal_add_grupos').modal('hide');   
     if ( ! $("#add_group_form").parsley().isValid()) {
       return;
     }
@@ -181,6 +209,7 @@ $(function() {
   
   // elimina una VM del sistema
   $("#rmForm").submit(e => {
+    $('#modal_rm').modal('hide');
 	  const value = $("#rmName").val();
     Vt.rm(url, [value]).then(r => update(r));
     $("#rmForm").parsley().reset();

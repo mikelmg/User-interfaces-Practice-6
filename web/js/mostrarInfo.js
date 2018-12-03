@@ -1,7 +1,5 @@
 $(document).ready(function(){
   $( document ).on( "click", "#tabla_mvs td", function() {
-      console.log(this);
-      console.log($(this).attr("id"));
       $("#inputNombre" ).attr("placeholder", $(this).attr("id"));
       $("#inputRAM" ).attr("placeholder", $(this).attr("ram"));
       $("#inputHDD" ).attr("placeholder", $(this).attr("hdd"));
@@ -25,5 +23,9 @@ $(document).ready(function(){
       else{
         //mostrar algo del grupo
       }
+  });
+
+  $( "#boton_guardar" ).click(function() {
+    console.log(($( "#inputNombre" ).val()));
   });
 });
