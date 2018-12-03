@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <title>VmToolkit</title>
   </head>
   <body>
@@ -286,16 +286,16 @@
                             </div>
                             
                             <div class="form-group row">
-                                <label for="inputRAM" class="col-sm-3 col-form-label">Memoria RAM(MB):</label>
+                                <label for="inputRAM" class="col-sm-3 col-form-label">Memoria RAM (MB):</label>
                                 <div class="col-sm-5">
-                                    <input type="number" class="form-control" id="inputRAM" placeholder="-" disabled>
+                                     <input type="number" class="form-control" min="1" max="32" step="1" id="inputRAM" name="RAM" placeholder="-" pattern="\d+" disabled>
                                 </div>
                             </div>
                             
                             <div class="form-group row">
-                                <label for="inputHDD" class="col-sm-3 col-form-label">Tamaño disco virtual(MB):</label>
+                                <label for="inputHDD" class="col-sm-3 col-form-label">Tamaño disco virtual (MB):</label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="inputHDD" placeholder="-" disabled>
+                                   <input type="number" class="form-control" min="1"  step="1" id="inputHDD" name="HDD" placeholder="10000" pattern="\d+" disabled>
                                 </div>
                             </div>
                             
@@ -306,7 +306,7 @@
                             <div class="form-group row">
                                 <label for="inputCPU" class="col-sm-3 col-form-label">Porcentaje CPU(%):</label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="inputCPU" placeholder="-" disabled>
+                                    <input type="number" class="form-control" min="1" max="100" step="1" id="inputCPU" name="CPU" placeholder="-" pattern="\d+" disabled>
                                 </div>
                                 
                             </div>
@@ -314,7 +314,7 @@
                             <div class="form-group row">
                                 <label for="inputNucleos" class="col-sm-3 col-form-label">Núcleos</label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="inputNucleos" placeholder="-" disabled>
+                                    <input type="number" class="form-control" min="1" step="1" id="inputNucleos" name="Nucleos" placeholder="-" pattern="\d+" disabled>
                                 </div>
                             </div>
                             
