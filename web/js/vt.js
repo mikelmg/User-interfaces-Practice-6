@@ -221,7 +221,6 @@ $(function() {
     //console.log(sampleParams);
     Vt.add(url, sampleParams).then(r => update(r))
     $("#add_vm_form").parsley().reset();
-    i++;
     
 
     return false; // <-- evita que se envie el formulario y recargue la pagina
