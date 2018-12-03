@@ -7,7 +7,7 @@ a#btn_archivo { margin: 10px;
 #tabla{
 	background-color: #cce6ff;
 }
-#filaNombreGrupo{
+.grupo{
 	background-color: #1a90ff;
 }
 .table-wrapper-scroll-y {

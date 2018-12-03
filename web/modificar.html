@@ -14,6 +14,7 @@
 		<title>Magic Virtual Machine</title>
 	</head>
 	<body>
+		<p id="pruebas"></p>
 		<!-- PRACTICA 6: tu contenido aqui -->
 		<div class="header">
 			
@@ -44,21 +45,26 @@
 												<span aria-hidden="true">&times;</span>
 											</button>
 										</div>
-										<div class="modal-body">
-											<div>
-												
-												<div class="col-lg">
-													<div class="custom-file">
-														<input type="file" class="custom-file-input" id="inputImportar" aria-describedby="inputGroupFileAddon01">
-														<label class="custom-file-label" for="inputImportar">Añadir fichero</label>
+										<form id="formImportar">
+
+											<div class="modal-body">
+												<div>
+													
+													<div class="col-lg">
+														Select a file: <input type="file" name="myFile"><br><br>
+														<!--<div class="custom-file">
+															<input type="file" class="custom-file-input" id="inputImportar" aria-describedby="inputGroupFileAddon01">
+															<label class="custom-file-label" for="inputImportar">Añadir fichero</label>
+														</div>-->
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-											<button type="button" class="btn btn-primary">Importar</button>
-										</div>
+										
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+												<input type="submit" class="btn btn-primary">Importar</input>
+											</div>
+										</form>
 									</div>
 								</div>
 							</div>
@@ -126,25 +132,7 @@
 				<div class="col-4">
 					<div class="table-wrapper-scroll-y">
 						<table class="table table-hover" id="tabla">				
-							<tbody>
-								<tr>
-									<td>mv1</td>
-								</tr>
-								<tr>
-									<td>mv3</td>
-								</tr>
-								<tr>
-									<td>mv2</td>
-								</tr>
-								<tr>
-									<td>mv5</td>
-								</tr>
-								<tr>
-									<td>mv6</td>
-								</tr>
-								<tr>
-									<td>mv9</td>
-								</tr>
+							<tbody id="tabla_mvs">
 							</tbody>
 						</table>
 					</div>
@@ -155,37 +143,7 @@
 				<div class="col-4">
 					<div class="table-wrapper-scroll-y">
 						<table class="table table-hover" id="tabla">				
-							<tbody>
-								<tr id="filaNombreGrupo">
-									<td>grupo 2</td>
-									<td></td>
-									<td></td>
-									<td><a id= "plus" class="btn btn-success"><i class="fas fa-plus"></i></a></td>
-								</tr>
-								<tr>
-									<td>mv3</td>
-									<td><span class="badge-pill badge-danger"></span></td>
-									<td>apagado</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>mv2</td>
-									<td><span class="badge-pill badge-warning"></span></td>
-									<td>suspendido</td>
-									<td></td>
-								</tr>
-								<tr id="filaNombreGrupo">
-									<td>grupo 4</td>
-									<td></td>
-									<td></td>
-									<td><a id= "plus" class="btn btn-success"><i class="fas fa-plus"></i></a></td>
-								</tr>
-								<tr>
-									<td>mv1</td>
-									<td><span class="badge-pill badge-success"></span></td>
-									<td>encendido</td>
-									<td></td>
-								</tr>
+							<tbody id="tabla_grupos">
 							</tbody>
 						</table>
 					</div>
@@ -307,9 +265,11 @@
 	<!--<script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.1.3/dist/bootstrap-validate.js" integrity="sha384-Mdg4vWje/mL9Q7zo0ThF20z6u2qkn4F2+2/0hUzYqhV7jAQVyhuerLUbplu63KuK" crossorigin="anonymous"></script>
 		<script src="js/bootstrap-validate.js"></script>
 	<script src="js/validacion.js"></script>-->
+
 	<script src="js/jquery-3.3.1.slim.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/estados.js"></script>			
+	<script src="js/estados.js"></script>
+	<script type="text/javascript" src="js/importar.js"></script>			
 </body>
 </html>							
