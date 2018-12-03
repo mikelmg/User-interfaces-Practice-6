@@ -98,7 +98,9 @@ function createVmItem(params) {
   ];
   return $(html.join(''));*/
 
-  const html = "<tr><td id="+params.name+" name="+params.name+" ram="+params.ram+" hdd="+params.hdd+" cpu="+params.cpu+" cores="+params.cores+" ip="+params.ip+">"+params.name+"</td></tr>";
+
+
+  const html = "<tr><td id="+params.name+" name="+params.name+" ram="+params.ram+" hdd="+params.hdd+" cpu="+params.cpu+" cores="+params.cores+" ip="+params.ip+">"+params.name+"<span class='badge badge-"+stateToBadge[params.state]+" badge-pill estado'>&nbsp;</span><span>"+params.state+"</span></td></tr>";
   return html;
 }
 
