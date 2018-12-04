@@ -58,8 +58,8 @@ class Params {
   * undefined values are useful when setting values for groups or 
   * multiple vms at the same time.
   * @param {String} name
-  * @param {Number} ram in kb
-  * @param {Number} hdd in kb
+  * @param {Number} ram in mb
+  * @param {Number} hdd in mb
   * @param {Number} cpu as percentage of max
   * @param {String} ip, in IPv4 dotted-decimal notation
   * @param {String} iso, the name of an existing iso-file to be used as DVD contents
@@ -67,8 +67,8 @@ class Params {
   */
   constructor(name, ram, hdd, cpu, cores, ip, iso, action) {
     this.name = name;
-    this.ram = Params.checkRange(ram, 1024, 1024*64, "ram");
-    this.hdd = Params.checkRange(hdd, 1024, undefined, "hdd");
+    this.ram = Params.checkRange(ram, 1, 1024*64, "ram");
+    this.hdd = Params.checkRange(hdd, 1, undefined, "hdd");
     this.cpu = Params.checkRange(cpu, 0, 100, "cpu");
     this.cores = Params.checkRange(cores, 1, undefined, "cores");
     this.ip = Params.checkIp(ip);
