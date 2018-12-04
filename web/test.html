@@ -64,7 +64,6 @@
                 <div class="col-1"><a id ="b2" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-stop"></i></a></div>
                 <div class="col-1"><a id ="b3" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-pause"></i></a></div>
                 <div class="col-1"><a id ="b4" class="nav-link btn btn-primary" href="#" id=""><i class="fas fa-sync-alt"></i></a></div>
-                <div class="col-4"><a class="nav-link btn btn-primary" href="#" id="button_modal_add_vm_to_group">Añadir MV a grupo</a></div>
                 <div class="col-1"><a class="nav-link btn btn-danger" href="#" id="button_modal_rm"><i class="fas fa-trash-alt"></i></a></div>
                 
                 
@@ -85,7 +84,8 @@
                 </div>
                 <div class="col-1"></div>
                 <div class="col-1"><a class="nav-link btn btn-primary" href="#" id="button_modal_add_group"><i class="fas fa-plus"></i></a></div>
-                <div class="col-2"><h4>Grupos</h6></div>
+                <div class="col-1"><h4>Grupos</h6></div>
+                <div class="col-2"><a class="nav-link btn btn-primary" href="#" id="button_modal_add_vm_to_group">Añadir MV a grupo</a></div>  
                 <div class="col-2">
                     <div class="input-group">
                         <div class="input-group-prepend">
@@ -235,7 +235,9 @@
                                         <div class="form-group">
                                         <input type="text" class="form-control" id="input_vm_togroup"
                                                 placeholder="Nombre de VM" required="" data-parsley-newname="">
-                                         <input type="text" class="form-control" id="input_grupo"                                placeholder="Nombre de grupo" required="" data-parsley-newname="">
+                                        </br>
+                                        <input type="text" class="form-control" id="input_grupo" 
+                                                placeholder="Nombre de grupo" required="" data-parsley-newname="">
                                         </div>                                  
                                         <button id="boton_add_vm_to_group" class="btn btn-primary">Añadir VM al grupo</button>
                                     </form>      
@@ -330,7 +332,7 @@
                             
                             <div class="form-group row">
                                 <label for="inputIP" class="col-sm-3 col-form-label">Dirección IP</label>
-                                <div class="ip col-sm-5">
+                                <div class="col-sm-5">
                                     <input type="text" class="form-control" id="input_ip" placeholder="-" disabled>
                                 </div>
                             </div>
