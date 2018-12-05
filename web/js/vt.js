@@ -100,7 +100,7 @@ function createVmItem(params) {
 
 
 
-  const html = "<tr><td id="+params.name+" name="+params.name+" ram="+params.ram+" hdd="+params.hdd+" cpu="+params.cpu+" cores="+params.cores+" ip="+params.ip+">"+params.name+"<span class='badge badge-"+stateToBadge[params.state]+" badge-pill estado'>&nbsp;</span><span>"+params.state+"</span></td></tr>";
+  const html = "<tr><td id="+params.name+" name="+params.name+" ram="+params.ram+" hdd="+params.hdd+" cpu="+params.cpu+" cores="+params.cores+" ip="+params.ip+"> <div class='row'><div class='col-5'>"+params.name+"</div> <div class='col-2'><span class='badge badge-"+stateToBadge[params.state]+" badge-pill estado'>&nbsp;</span></div><div class='col-2'><span>"+params.state+"</span></div><div class='col-3'></div></div></td></tr>";
   return html;
 }
 
